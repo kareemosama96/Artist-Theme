@@ -1,0 +1,121 @@
+//start clients
+.clients
+    margin: 0 auto
+    padding: 0 0 5% 0 
+    height: 100%
+    text-align: center
+    position: relative
+    h3
+        @extend %title
+        +reset()
+        padding: 10% 0 3% 0
+    .overflow    
+        overflow-x: hidden
+        .person-container
+            display: flex
+            width: 400%
+            height: 100%
+            padding: 0 0 5% 0
+            a
+                color: $mainfaded
+                &:hover
+                    color: $maincolor
+            .pointer-left
+                left: 2%
+                @extend %pointer
+            .pointer-right
+                right: 2%
+                @extend %pointer
+            .person
+                width: 25%
+                padding: 0 3%
+                display: flex
+                
+            .client-info
+                width: 25%
+                .photo
+                    max-width: 100px
+                    max-height: 100px
+                    border-radius: 50% 
+                .name
+                    text-transform: uppercase
+                    letter-spacing: 0.1em
+                    font-weight: bold
+                    margin: 1% 0 0 0
+                    opacity: 0.7
+                .title 
+                    opacity: 0.7
+                    font-style: italic
+            .client-quote
+                width: 75%
+                height: 100%
+                position: relative
+                .quote-left
+                    position: absolute
+                    font-size: 3em
+                    font-weight: 100
+                    color: $maincolor
+                    opacity: 0.4 
+                .quote
+                    margin: 2%
+                    font-size: 1.5em
+                    color: rgba(0,0,0,.5)
+                    line-height: 1.8em
+
+    .company-container
+        width: 80%
+        margin: 0 auto
+        display: flex
+        .company
+            width: 25%
+            padding: 2% 2% 0 2%
+            cursor: pointer
+            img
+                width: 100%
+            &:hover
+                background: $mainfaded
+
+        .b-1
+            border-bottom: 8px solid $maincolor
+              
+            
+@media screen and (max-width: 750px)
+    .clients
+        .overflow
+            .person-container
+                .person
+                    display: block
+                    .client-info
+                        width: auto
+                    .client-quote
+                        width: auto
+                        margin: 2% 0
+                        .quote
+                            line-height: default       
+                            font-size: 1.1em
+
+                                
+@media screen and (max-width: 850px)
+    .clients
+        .overflow
+            .person-container
+                .person
+                    .client-quote
+                        .quote
+                            line-height: default       
+                            font-size: 1.1em
+            
+            
+            
+            
+//---------------------PLACEHOLDERS
+%pointer
+    position: absolute
+    top: 40%
+    font-size: 3em
+    font-weight: 100
+    color: $mainfaded
+    cursor: pointer
+    &:hover
+        color: $maincolor
+    

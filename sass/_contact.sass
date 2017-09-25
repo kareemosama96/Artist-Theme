@@ -1,0 +1,56 @@
+.contact
+    width: 100%
+    margin: 0 auto
+    padding: 7% 0 
+    text-align: center
+    position: relative
+    background: $secondarybg
+    align-content: center
+    h3
+        @extend %title
+    .icon-container
+        align-items: center
+        .icons
+            margin: 0 auto
+            width: 80%
+            display: flex   
+            .icon
+                margin: 0 auto
+                width: 3.5em
+                height: 3.5em
+                border-radius: 50%
+                background-color: $mainfaded
+                &:hover
+                    background-color: $maincolor
+                    cursor: pointer
+                i
+                    color: white
+                    padding: .35em 0 0 0 
+                    font-size: 2em
+    .email-container
+        margin: 0 auto
+        p
+            font:
+                family: 'Raleway', sans-serif
+                size: 4em
+            color: $maincolor
+            letter-spacing: .15em
+                
+                
+                
+@media screen and (max-width: 750px)
+    .contact
+        .icon-container
+            .icons
+                .icon
+                    width: 3em
+                    height: 3em
+                    i
+                        font-size: 2em
+        .email-container
+            p
+                font-size: 1.5em
+
+        
+        
+        

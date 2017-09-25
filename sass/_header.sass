@@ -1,0 +1,111 @@
+//start header
+header
+    background: url(../pics/header/header.jpg) center fixed
+    background-size: cover
+    overflow: hidden
+    .logo
+        @extend %logo
+    nav
+        float: right
+        padding: 1% 3% 0  0
+        ul
+            a
+                font-weight: bold
+                font-size: 1.1em
+                color: rgba(0,0,0,.5)
+                text-decoration: none
+                list-style: none
+                text-transform: uppercase
+                &:hover
+                    color: rgba(255,255,255,.5)
+                    cursor: pointer
+                li
+                    width: 120px
+                    border: .1px solid rgba(255,255,255,.5)
+                    float: left
+                    margin: .2em
+                    padding: 0 
+                    text-align: center
+    h1
+        +reset()
+        font-family: 'Raleway', sans-serif
+        clear: both
+        text-align: center
+        text-transform: uppercase
+        color: white
+        letter-spacing: 0.3em
+        padding: 7% 0 0 0 
+        span
+            +reset()
+            display: inline-block
+            padding: 0 6%
+            border: .2em solid #fff
+            font-size: 2em
+    .kicker
+        background-color: rgba(255,255,255,.5)
+        font-weight: 700
+        letter-spacing: .1em
+        text-align: center
+        text-transform: uppercase
+        color: $maincolor
+        margin: 2% 0 10% 0 
+    
+    .search
+        width: 60%
+        margin: 4% auto
+        input
+            margin: 1% 0 
+            transition: width 0.5s ease-in-out
+            border: 5px solid white
+            font-size: 1.5em
+            text-align: center
+            color: rgba(0,0,0,0.5)
+            height: 2%
+            width: 70%
+            &:focus
+                width: 100%
+                
+        li
+            margin: 1% 0 
+            text-decoration: none
+            list-style: none
+            width: 25%
+            float: right    
+            border: 5px solid white
+            text-align: center
+            a
+                font-size: 1.5em
+                color: rgba(0,0,0,.5)
+                
+                &:hover
+                    color: rgba(255,255,255,.5)
+                    cursor: pointer
+ 
+
+                   
+
+        
+        
+@media screen and (max-width: 750px)
+    header
+        nav
+            ul
+                a
+                    text-align: center
+
+                    li
+                        float: none
+        h1
+            padding: 7% 0 
+            letter-spacing: .2em
+            margin: 0 2%
+            font-size: 1.5em
+            span
+                font-size: 1.5em
+        .search
+            //width: 60%
+            padding: 0 0 3em 0
+            //margin: 4% auto
+        
+            //width: 70%
+            //margin: 4% 15%

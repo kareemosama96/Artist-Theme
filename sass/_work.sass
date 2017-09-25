@@ -1,0 +1,133 @@
+//start work
+.overflow
+    overflow: hidden
+    .work
+        text-align: center    
+        margin: 0 auto 
+        padding: 3% 0 7% 0
+        background-color: $secondarybg
+        align-content: center
+        width: 200%
+        .off-screen
+            display: flex   
+            .work-belt
+                margin: 0 auto
+                width: 45%
+
+                h3
+                    @extend %title
+                    +reset()
+                    padding: 5em 0 3em 0
+
+                .work-container
+                    position: relative
+                    overflow: hidden
+                    float: left 
+                    width: 25%
+                    @for $i from 1 through 8
+                        #work-sample-#{$i}
+                            @extend %work-sample
+                            background: url("../pics/work/work-#{$i}.jpg") center center
+                    #work-title-container
+                        background: $mainfaded
+                        width: 100%
+                        height: 100%
+                        color: white
+                        font-size: 2em
+                        line-height: 1.5em
+                        position: absolute
+                        display: flex
+                        justify-content: space-around
+                        align-items: center
+                        top: 100%
+                        transform-style: preserve-3d
+                        transition: all .7s ease-in-out
+                        transform: rotateY(-180deg)
+                        .work-title
+                            text-transform: uppercase
+                    &:hover #work-title-container    
+                        cursor: pointer
+                        top: 0
+                        transform: rotateY(0deg)
+
+            .show-belt
+                width: 50%
+                float: left
+                padding: 0 0 4% 0
+                .back
+                    position: relative
+                    display: block
+                    margin: 0 auto
+                    padding: 2em 0 0 0
+                    i
+                        position: absolute  
+                        left: 1%
+                        padding: .5%
+                        text-align: center
+                        font-size: 3em
+                        color: $mainfaded
+                        text-transform: uppercase
+                        &:hover
+                            color: $maincolor
+                            cursor: pointer
+                .show-container
+                    @for $i from 1 through 8
+                        .work-#{$i}
+                            @extend %work-show
+                            h4
+                                @extend %title
+                        
+                     
+            
+@media screen and (max-width: 850px)
+    .overflow
+        .work
+            .off-screen
+                .work-belt
+                    .work-container
+                        width: 50%
+                        #work-title-container
+                            font-size: 1.3em
+                            line-height: 1em
+@media screen and (max-width: 650px)
+    .overflow
+        .work
+            .off-screen
+                .show-belt
+                    .back
+                        i
+                            position: relative
+                            margin: 0 0 1% 0
+                .show-container
+                    @for $i from 1 through 8
+                        .work-#{$i}
+                            @extend %work-show-responsive
+
+//----------------PLACEHOLDERS
+%work-sample
+    display: block
+    position: relative
+    overflow: hidden
+    padding: 40%
+    height: 50%
+    
+%work-show
+    width: 100%
+    text-align: center
+    align-content: center
+    display: none
+
+@media screen and (max-width: 650px)
+    %work-show-responsive
+        width: 70%
+        margin: 0 auto
+        text-align: center 
+        align-content: center
+        
+        img
+            width: 50%
+            
+
+
+   
+   

@@ -1,0 +1,152 @@
+//start about
+.about
+    background-color: white
+    padding: 5%
+    text-align: center 
+    
+    h3
+        @extend %title
+        
+    .pics
+        display: flex
+        max-width: 80%
+        margin: 0 auto
+        justify-content: space-between
+        align-items: center
+    //loop for pics
+    @for $i from 1 through 5
+        @if ( $i != 3 )
+            .pic-#{$i}
+                order: $i
+                @extend %pic-format
+                
+        @else
+            .pic-#{$i}
+                order: $i
+                @extend %pic-format-center
+                
+    p
+        +reset()
+        clear: both
+        width: 80%
+        margin: 2em auto 7em auto
+        font-size: 1.5em
+        color: rgba(0,0,0,.5)
+        line-height: 1.8em
+        
+    .skills
+        +reset()
+        margin: 2.5em auto 
+        width: auto
+    
+        //loop for skills
+        @for $j from 1 through 10
+            .skill-#{$j}
+                @extend %skill-format
+        @for $i from 1 through 10
+            & .skill-#{$i} span:nth-child(n+#{$i+2})
+                @extend %skill-span-format
+        
+
+                
+//responsive styling for less than 850px                
+@media screen and (max-width: 850px)
+    .about
+        .pics
+            display: block
+            text-align: center
+            justify-content: space-between
+            margin: 0 auto
+            align-items: center
+            
+            @for $i from 1 through 5
+                @if $i != 3
+                    .pic-#{$i}      
+                        @extend %pic-format-responsive
+
+                @else
+                    .pic-#{$i} 
+                        @extend %pic-format-center-responsive
+
+        p
+            font-size: 1.1em
+
+        .skills
+            display: block
+            width: auto
+            //loop for skills
+            @for $j from 1 through 10
+                .skill-#{$j}
+                    @extend %skill-format-responsive
+                
+                
+//---------------PLACEHOLDERS
+%pic-format
+    text-align: center
+    background-color: rgba(0,0,0,.1)
+    border: .1px solid transparent
+    border-radius: 100%
+    box-shadow: 0px 5px 5px rgba(0,0,0,.5)
+    font-size: 3.5em
+    width: 2em
+    height: 2em
+    i
+        color: $maincolor
+        padding: .5em 0 0 0
+
+%pic-format-center
+    +reset()
+    background-color: rgba(0,0,0,.1)
+    border: .1px solid transparent
+    border-radius: 100%
+    width: 16em
+    height: 16em
+    background: url("../pics/about/me.jpg") center 
+    box-shadow: 10px 10px 10px rgba(0,0,0,.2) , -10px -10px 10px rgba(0,0,0,.2) , -10px 10px 10px rgba(0,0,0,.2) , 10px -10px 10px rgba(0,0,0,.2)
+    
+
+%skill-format
+    display: inline-block
+    font-size: 1.3em
+    color: rgba(0,0,0,.5)
+    text-align: left
+    width: 45%
+    padding: 0 5% 0 0
+    span
+        width: 10%
+        border: 2px solid $maincolor
+        display: inline-block
+        margin: .25em 0 1.5em 0
+
+%skill-span-format
+    border: 2px solid rgba(0,0,0,.3)
+
+
+@media screen and (max-width: 850px)
+    
+    %pic-format-responsive
+        display: inline-block
+        margin: .1em
+        width: 1.5em
+        height: 1.5em
+        i
+            font-size: 40px
+            color: $maincolor
+            padding: 0  
+            
+    %pic-format-center-responsive
+        display: block
+        margin: 0 auto 2em auto
+        width: 10em
+        height: 10em
+        
+    %skill-format-responsive 
+        +reset()
+        display: block
+        width: 80%
+        margin: 0 auto
+        span
+            width: 10%
+            border: 2px solid maincolor
+            display: inline-block
+            margin: .25em 0 1.5em 0

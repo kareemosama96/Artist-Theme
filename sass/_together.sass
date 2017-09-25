@@ -1,0 +1,59 @@
+.together
+    text-align: center
+    margin: 0 0 4em 0
+    h3
+        @extend %title
+    .form
+        width: 50%
+        margin: 0 auto
+        .info
+            width: 100%
+            display: flex
+            @media screen and (max-width: 650px)
+                display: block
+            .info-input
+                width: 100%
+                margin: 2%
+                text-align: left
+                span
+                    @extend %span
+                input
+                    @extend %input
+                    
+        .message
+            margin: 2%
+            text-align: left
+            @media screen and (max-width: 650px)
+                margin-top: 10% 
+            span
+                @extend %span
+            .text
+                @extend %input
+            .send
+                float: right
+                width: 30%
+                padding: 1%
+                font:
+                    weight: bold
+                    size: 2em
+                letter-spacing: .1em
+                color: white
+                background: $maincolor
+                margin: 3% 0 10% 0 
+                @media screen and (max-width: 650px)
+                    float: none
+                    width: 100%
+                
+
+                
+//--------------PLACEHOLDERS
+%span
+    height: 1.5em 
+    font-size: 1.1em
+    color: rgba(0,0,0,.5)
+    letter-spacing: .1em
+%input
+    width: 100% 
+    line-height: 2em
+    border: 4px solid $maincolor
+    padding: 1px .5em
